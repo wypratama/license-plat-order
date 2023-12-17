@@ -15,31 +15,46 @@ const columns = [
 const mostFrequentLicence = ref<string | null>(null)
 
 function getMostFrequentInfo() {
-  if (!data.value) return false
+  if (!data.value)
+    return false
   const value = getMostFrequentLicense(data.value)
   mostFrequentLicence.value = value
+}
+
+const onModal = ref(false)
+
+function onOpenModal() {
+  getMostFrequentInfo()
+  onModal.value = true
+}
+
+function onCloseModal() {
+  onModal.value = false
+  mostFrequentLicence.value = null
 }
 </script>
 
 <template>
-  <div>
-    <h1>License Plate Information</h1>
-    <div v-if="pending">
-      loading data..
-    </div>
-    <div v-else-if="error">
-      error getting data. reason: {{ error.message }}
-    </div>
-    <div v-else>
-      <LisenceTable :value="data" :columns="columns" />
+  <div class="flex flex-col justify-center items-center bg-gray-200 h-screen">
+    <h1 class="text-2xl mb-8">
+      License Plate Information
+    </h1>
+
+    <div class="w-full max-w-3xl">
+      <Loading v-if="pending" />
+      <Error v-else-if="error" :error="error" />
+      <div v-else-if="data" class="overflow-x-auto relative shadow-md sm:rounded-lg">
+        <LisenceTable :value="data" :columns="columns" />
+      </div>
     </div>
 
-    <div>
-      <h2>Most Frequent License Plate</h2>
-      <button @click="getMostFrequentInfo">
-        get info
-      </button>
-      <span>{{ mostFrequentLicence }}</span>
-    </div>
+    <button
+      class="mt-8 flex items-center justify-center px-4 font-medium bg-green-700 text-white h-9 rounded-md rounded md hover:bg-green-800 transition-all duration-300"
+      @click="onOpenModal"
+    >
+      Get Most Frequent License
+    </button>
+
+    <Modal v-if="onModal" :most-frequent="mostFrequentLicence" @close="onCloseModal" />
   </div>
 </template>

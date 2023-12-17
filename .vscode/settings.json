@@ -39,5 +39,6 @@
     "jsonc",
     "yaml",
     "toml"
-  ]
+  ],
+  "css.customData": [".vscode/css.json"]
 }
