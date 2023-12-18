@@ -2,6 +2,12 @@
 
 This NuxtJS application displays a list of vehicle registration numbers (license plates) along with their corresponding regions. It also features functionality to identify the most frequently occurring registration number.
 
+## Preview
+
+You can preview this project at:
+- [https://fhzxhm-3000.csb.app/](https://fhzxhm-3000.csb.app/)
+- [stackblitz](https://stackblitz.com/~/github.com/wypratama/license-plat-order)
+
 ## Features
 
 - **License Plate Table**: Displays vehicle registration numbers and their corresponding regions.

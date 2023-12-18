@@ -7,4 +7,10 @@ export default defineNuxtConfig({
       Inter: [400, 700],
     },
   },
+
+  app: {
+    head: {
+      title: 'License Plate Number App',
+    },
+  },
 })
