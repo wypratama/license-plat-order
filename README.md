@@ -1,75 +1,43 @@
-# Nuxt 3 Minimal Starter
+# License Plate Order
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This NuxtJS application displays a list of vehicle registration numbers (license plates) along with their corresponding regions. It also features functionality to identify the most frequently occurring registration number.
 
-## Setup
+## Features
 
-Make sure to install the dependencies:
+- **License Plate Table**: Displays vehicle registration numbers and their corresponding regions.
+- **Frequency Finder**: A feature to find and display the most frequent registration number.
 
-```bash
-# npm
-npm install
+## Getting Started
 
-# pnpm
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+- Node >= 18
+- PNPM
+
+### Installing
+A step-by-step series of examples that tell you how to get a development environment running:
+
+### Clone the repository:
+```
+git clone https://github.com/wypratama/license-plat-order.git
+```
+Navigate to the project directory:
+```
+cd license-plat-order
+```
+Install the dependencies:
+```
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
+Start the development server:
+```
 pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
+Now, the application should be running on `http://localhost:3000`.
 
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Built With
+- **NuxtJS** - The Intuitive Vue Framework
+- **Tailwind CSS** - A utility-first CSS framework
+- **TypeScript** - Typed JavaScript at Any Scale

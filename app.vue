@@ -15,8 +15,6 @@ const columns = [
 const mostFrequentLicence = ref<string | null>(null)
 
 function getMostFrequentInfo() {
-  if (!data.value)
-    return false
   const value = getMostFrequentLicense(data.value)
   mostFrequentLicence.value = value
 }
@@ -37,14 +35,14 @@ function onCloseModal() {
 <template>
   <div class="flex flex-col justify-center items-center bg-gray-200 h-screen">
     <h1 class="text-2xl mb-8">
-      License Plate Information
+      License Plate Number Information
     </h1>
 
     <div class="w-full max-w-3xl">
       <Loading v-if="pending" />
       <Error v-else-if="error" :error="error" />
       <div v-else-if="data" class="overflow-x-auto relative shadow-md sm:rounded-lg">
-        <LisenceTable :value="data" :columns="columns" />
+        <LicenseTable :value="data" :columns="columns" />
       </div>
     </div>
 
@@ -52,7 +50,7 @@ function onCloseModal() {
       class="mt-8 flex items-center justify-center px-4 font-medium bg-green-700 text-white h-9 rounded-md rounded md hover:bg-green-800 transition-all duration-300"
       @click="onOpenModal"
     >
-      Get Most Frequent License
+      Get Most Frequent License Number
     </button>
 
     <Modal v-if="onModal" :most-frequent="mostFrequentLicence" @close="onCloseModal" />

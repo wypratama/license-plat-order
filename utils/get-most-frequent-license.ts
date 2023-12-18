@@ -1,4 +1,6 @@
-export default function (data: { nopol: string }[]) {
+export default function (data: { nopol: string }[] | null) {
+  if (!data)
+    return 'Data not found'
   const frequency: { [key: string]: number } = {}
   let maxFreq = 0
   let mostFrequent = ''

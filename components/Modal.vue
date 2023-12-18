@@ -54,7 +54,7 @@ const emit = defineEmits(['close'])
         </button>
       </header>
       <main class="relative flex-[1_1_auto] p-4" style="--size: 32rem">
-        <p>The most frequent license plate is: {{ mostFrequent }}</p>
+        <p>The most frequent license plate number is: {{ mostFrequent }}</p>
       </main>
       <footer class="flex flex-shrink-0 flex-wrap items-center justify-end flex-row p-4 gap-1" style="--size: 32rem">
         <button
